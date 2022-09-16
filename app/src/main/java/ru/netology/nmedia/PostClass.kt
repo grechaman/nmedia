@@ -1,3 +1,5 @@
+package ru.netology.nmedia
+
 import java.util.Calendar.*
 
 data class Post(
@@ -6,8 +8,7 @@ data class Post(
     val content: String,
     val published: String,
     val likedByMe: Boolean = false,
-    val amountLikes: Int = 10,
-    val amountShare: Int = 980,
-    val amountViews: Int = 15,
-
+    val amountLikes: Int,
+    val amountShare: Int,
+    val amountViews: Int,
     )
