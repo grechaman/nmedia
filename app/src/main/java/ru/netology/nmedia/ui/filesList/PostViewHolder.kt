@@ -7,9 +7,10 @@ import ru.netology.nmedia.databinding.CardPostBinding
 
 class PostViewHolder(
     private val binding: CardPostBinding,
-    private val onLikeListener: OnLikeListener
+    private val onLikeListener: OnLikeListener,
+    private val onShareListener: OnShareListener
 ) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(post : Post){
+    fun bind(post: Post) {
         binding.apply {
             author.text = post.author
             published.text = post.published
@@ -25,12 +26,12 @@ class PostViewHolder(
                 }
             )
             icLikes.setOnClickListener {
-                onLikeListener
+                onLikeListener(post)
             }
 
-//            icShare.setOnClickListener {
-//                viewModel.onShareClicked()
-//            }
+            icShare.setOnClickListener {
+                onShareListener(post)
+            }
         }
     }
 

@@ -9,6 +9,6 @@ interface PostRepository {
 
     fun likeById(id: Long)
 
-    fun share()
+    fun shareById(id: Long)
 
 }
